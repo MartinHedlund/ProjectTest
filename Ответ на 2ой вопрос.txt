@@ -1,0 +1,6 @@
+SELECT Products.ProductName, ISNULL(Categories.CategoryName, 'Нет категории') AS CategoryName
+FROM Products
+LEFT JOIN Categories ON Products.CategoryId = Categories.CategoryId;
+
+Функция ISNULL используется для замены значений NULL в столбце CategoryName на строку "Нет категории". 
+Это гарантирует, что имя продукта будет выводиться даже в случае отсутствия категории.
